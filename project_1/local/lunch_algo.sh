@@ -6,7 +6,7 @@
 function check_files () {
 
 		# Check if "voisin" file exist
-		for i in {1..4}
+		for i in {0..4}
 		do
 			file=$PWD'/voisin-'$i'.txt'
 			if [ ! -f $file ]; then
@@ -21,7 +21,7 @@ function check_files () {
 		fi
 
 		# Check if algo script exist
-		file=$PWD"/distributed_alg_v5.py"
+		file=$PWD"/distributed_alg.py"
 		if [ ! -f $file ]; then
 			return 1
 		fi
@@ -33,7 +33,7 @@ function check_files () {
 if check_files $1 ; then
 
 	# Get algo path
-	script=$PWD"/distributed_alg_v5.py"
+	script=$PWD"/distributed_alg.py"
 
 	# Kill pid from TCP port with connection established
 	konsole --hide-tabbar -e sudo kill_pid.sh
