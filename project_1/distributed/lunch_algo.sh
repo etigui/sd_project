@@ -60,15 +60,19 @@ function check_files () {
 		# Check if "voisin" file exist
 		for i in {0..4}
 		do
-			file=$PWD'/voisin-'$i'.txt'
+			file=$neighbour_directory_path'/voisin-'$i'.txt'
 			if [ ! -f $file ]; then
 			    return 1
 			fi
 		done
 
 		# Check if algo script exist
-		file=$PWD"/distributed_alg.py"
-		if [ ! -f $file ]; then
+		if [ ! -f $algo_file_path ]; then
+			return 1
+		fi
+
+		# Check if private key exist
+		if [ ! -f $ssh_private_key_file_path ]; then
 			return 1
 		fi
 
