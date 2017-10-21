@@ -8,13 +8,15 @@
 		>scp -P <port> <id_rsa_sd.pub> <username>@<ip_cloud_node>:/root/.ssh
 	3. On each cloud node add the public key to the authorized keys file
 		>cat ~/.ssh/id_rsa_sd.pub >> ~/.ssh/authorized_keys
-	4. In this Python script you must add or modify:
+	4. In this bash script you must add or modify:
 	 	- IP of each cloud node (the first position in the array is the root node !!!)
 	 	- Private key file path
 	 	- Neighbour directory path (the directory where are all the neighbour file)
 	 	- The Python script file path with our algo
 	 	- Maybe change the port or/and the username (SSH, SCP)
-	4. When all done, you can run this Python script
+	5. You must change the ip in each neighbour file (voisin-x.txt)
+	7. Have a look in our Python script (distributed_alg.py), it might have some error (change interface to get local IP ?)
+	6. When all done, you can run this bash script
 TODO_before
 
 : <<'exemple_exec'

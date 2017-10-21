@@ -3,6 +3,7 @@ import socket
 import sys
 import thread
 import threading
+import os
 
 # Sequence to define who is who
 req_father = 'M'
@@ -43,11 +44,7 @@ def socket_send(message, ip, port, id):
 	sock.send(message)
 	sock.close()
 	
-	
-
-
 def socket_receive(ip, port, end, parent):
-	
 	
 	# Create a TCP/IP socket
 	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -55,9 +52,7 @@ def socket_receive(ip, port, end, parent):
 	
 	# Bind the socket to the port
 	server_address = (ip, port)
-	#print >>sys.stderr, 'starting up on %s port %s' % server_address
-	#sock.bind(server_address)
-	print(server_address)
+	print >>sys.stderr, 'starting up on %s port %s' % server_address
 	sock.bind(server_address)
 	
 	# Listen for incoming connections
@@ -149,15 +144,16 @@ if __name__ == "__main__":
 		print ("distributed_alg <port> <neighbour_file> <status>")
 		sys.exit(1)
 	
-	# My local ip and port
+	# My port and status
 	my_port = int(sys.argv[1])
-	# TODO add my local adress instade of 127.0.0.1
-	my_ip = "127.0.0.1"
 	status = sys.argv[3]
+
+	# Get my IP address
+	interface="wlan0"
+	my_ip = os.popen("ip addr show "+interface).read().split("inet ")[1].split("/")[0]
 
 	# Get all neighbour from file
 	get_neighbour(sys.argv[2])
-
 
 	# Root node
 	if status == 'INIT':
