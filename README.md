@@ -1,6 +1,4 @@
-# Implémentation d’un algorithme distribué en utilisant des sockets	
-
-## Construction d'un arbre	de	recouvrement en	largeur	d'abord		
+# Implémentation d'un arbre de recouvrement en largeur d'abord en utilisant des sockets	
 
 Les messages sont transmis entre les nœuds du réseau via les sockets. Chaque nœud est serveur et client en même 
 temps. Il est implémenté sur une machine différente de celles allouées aux autres nœuds.
