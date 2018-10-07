@@ -15,9 +15,9 @@ Exemple :
 Nom du fichier : voisin-01.txt. Ce fichier représente le nœud 1 
 Contenu du fichier :   
 
-  129.194.184.101 // identifiant du 1ervoisin 
-  129.194.184.110 // identifiant du 2ème voisin 
-  129.194.184.111 // identifiant du 3ème voisin 
+    129.194.184.101 // identifiant du 1ervoisin 
+    129.194.184.110 // identifiant du 2ème voisin 
+    129.194.184.111 // identifiant du 3ème voisin 
 
 Par souci de compatibilité, il est impératif de respecter ce format 
 Le programme distributed_alg à écrire doit être appelé comme suit : 
