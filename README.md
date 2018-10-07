@@ -25,8 +25,8 @@ distributed_alg num_port voisin-x.txt  INIT
 ou 
 distributed_alg num_port voisin-x.txt  WAIT
 
-  INIT : signifie que le nœud en question commence l’exécution sans attendre la réception du premier message. 
-  WAIT : signifie que le nœud en question attend la réception du premier message avant de commencer à envoyer des messages. 
+    INIT : signifie que le nœud en question commence l’exécution sans attendre la réception du premier message. 
+    WAIT : signifie que le nœud en question attend la réception du premier message avant de commencer à envoyer des messages. 
   
 Le fichier **voisin-x.txt** doit être lu par le nœud concerné.
 
